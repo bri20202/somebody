@@ -23,7 +23,7 @@
           <a href="#nsfw">NSFW</a>
           <a href="#roadmap">Roadmap</a>
         </div>
-        <button class="button button-outline">Join waitlist</button>
+        <button class="button button-outline" data-open-chat>Try the chat</button>
       </nav>
       <section class="hero">
         <div class="hero-content">
@@ -34,7 +34,8 @@
             Build a trusted companion that knows your favorites, your dislikes, and your goals.
           </p>
           <div class="hero-actions">
-            <button class="button">Start early access</button>
+            <button class="button" data-open-chat>Try the chat</button>
+            <button class="button button-outline">Start early access</button>
             <button class="button button-ghost">See how it works</button>
           </div>
           <div class="hero-meta">
@@ -226,6 +227,33 @@
       </div>
       <div class="footer-meta">© 2024 Somebody. All rights reserved.</div>
     </footer>
+
+    <button class="chat-fab" aria-label="Open chat demo" data-open-chat>
+      Try chat
+    </button>
+
+    <div class="chat-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="chat-window">
+        <div class="chat-header">
+          <div>
+            <strong>Somebody demo</strong>
+            <span>Sample conversation</span>
+          </div>
+          <button class="icon-button" aria-label="Close chat" data-close-chat>✕</button>
+        </div>
+        <div class="chat-thread" id="chatThread">
+          <div class="chat-bubble friend">
+            Hi! I’m Somebody. Want to tell me your favorite thing lately?
+          </div>
+          <div class="chat-bubble user">I’ve been obsessed with sunrise hikes.</div>
+          <div class="chat-bubble friend">Love that! I’ll remember sunrise hikes for next time.</div>
+        </div>
+        <form class="chat-input" id="chatForm">
+          <input type="text" placeholder="Type your message..." aria-label="Message" required />
+          <button class="button button-small" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
