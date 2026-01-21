@@ -4,6 +4,29 @@ const openChatButtons = document.querySelectorAll("[data-open-chat]");
 const closeChatButton = document.querySelector("[data-close-chat]");
 const chatForm = document.getElementById("chatForm");
 const chatThread = document.getElementById("chatThread");
+const root = document.documentElement;
+let ombreTicking = false;
+
+const updateOmbre = () => {
+  const scrollTop = window.scrollY || window.pageYOffset;
+  const shift = Math.min(scrollTop * 0.35, window.innerHeight * 1.5);
+  root.style.setProperty("--ombre-y", `${shift}px`);
+  ombreTicking = false;
+};
+
+const handleScroll = () => {
+  if (ombreTicking) {
+    return;
+  }
+  ombreTicking = true;
+  window.requestAnimationFrame(updateOmbre);
+};
+
+if (root) {
+  updateOmbre();
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", updateOmbre);
+}
 
 if (form) {
   form.addEventListener("submit", (event) => {

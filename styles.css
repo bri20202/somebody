@@ -8,6 +8,7 @@
   --accent-soft: #ece7ff;
   --border: #e5e7eb;
   --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  --ombre-y: 0px;
 }
 
 * {
@@ -18,7 +19,9 @@
 
 body {
   font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  background: #f8f7ff;
+  background: linear-gradient(120deg, #f8f7ff 0%, #eef2ff 35%, #fef3c7 70%, #e9d5ff 100%);
+  background-size: 200% 200%;
+  background-position: 50% var(--ombre-y);
   color: #0f172a;
   line-height: 1.6;
 }
